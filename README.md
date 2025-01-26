@@ -10,18 +10,7 @@ Bioskop CLI allows you to easily watch movies and TV shows with subtitles, all f
     cd bioskop-cli
     ```
 
-2. Get the necessary tokens:
-    - Generate a token using the API:
-      ```sh
-      TOKEN="$(curl 'http://api.movies.cortexakademija.com/generate-token' -s)"
-      ```
-
-    - Get your TMDB API key:
-      ```sh
-      TMDB_API_KEY="$(curl 'http://api.movies.cortexakademija.com/tmdb-token' -s)"
-      ```
-
-3. Run the application:
+2. Run the application:
     ```sh
     ./bioskop-cli
     ```

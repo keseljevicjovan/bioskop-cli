@@ -1,5 +1,8 @@
 #!/bin/sh
 
+TOKEN="$(curl -s 'https://api.movies.cortexakademija.com/generate-token' | jq -sR @uri | tr -d '"')"
+TMDB_API_KEY="$(curl 'https://api.movies.cortexakademija.com/tmdb-token' -s)"
+
 title=$((curl -s "https://api.themoviedb.org/3/movie/top_rated?api_key=$TMDB_API_KEY&language=en-US&page=1" | jq -r .results[].title) | dmenu -p "Enter Name of Movie/Series:" ) || exit 1
 encoded_title=$(echo "$title" | jq -sR @uri)
 
